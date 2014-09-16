@@ -14,7 +14,7 @@ run\_analysis.R requires installation of the package "reshape2." This can be acc
 
 >install.packages("reshape2")
 
-#Data Transformations#
+#Data Transformations and Summaries#
 The raw data contained measurement data and label data in separate tables. The raw measurement data were contained in unlabeled data frames in the files X\_test.txt and X\_train.txt. The variable names were contained in the features.txt. The activity types corresponding to the rows in X\_test.txt and X\_train.txt were respectively contained in y\_test.txt and y\_train.txt. Descriptive labels describing the activity types were contained in activity\_labels.txt. Subject ID numbers corresponding to the rows in X\_test.txt and X\_train.txt were respectively contained in subject\_test.txt and subject\_train.txt. 
 
 The run\_analysis.R script loads all of these raw files into R. It replaces the activity type numbers in the y files with the descriptive names in activity\_labels.txt. It then binds the subject ID and activity label files as new columns in the X files, thereby adding a Subject ID number and Activity Type label to each row of measurement data. The features.txt data names were bound as a new row at the top of each X data table to add a row of variable names to each table. To create one data table, X\_test and X\_train were then bound to each other row-wise and sorted by SubjectID and Activity Type.
@@ -25,7 +25,7 @@ Please see README.md file in this repository for more details on the scripts use
 
 #Code Book#
 
-The run.analysis.R script produces a tidy data set composed of 68 variables from the raw data renamed to give a better description of the measurement being reported.
+The run\_analysis.R script produces a tidy data set composed of 68 variables from the raw data renamed to give a better description of the measurement being reported.
 
 ##SubjectID
 ID Number identifying each of the 30 study subjects. 
